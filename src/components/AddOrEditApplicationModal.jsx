@@ -40,8 +40,8 @@ const AddOrEditApplicationModal = ({
 
     try {
       const url = selectedApp
-        ? `http://localhost:8000/api/applications/${selectedApp._id}`
-        : "http://localhost:8000/api/applications";
+        ? `${process.env.REACT_APP_API_URL}/api/applications/${selectedApp._id}`
+        : `${process.env.REACT_APP_API_URL}/api/applications/${selectedApp._id}`;
       const method = selectedApp ? "PUT" : "POST";
 
       const res = await fetch(url, {

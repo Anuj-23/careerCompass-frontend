@@ -13,7 +13,7 @@ const ConfirmDeleteModal = ({
 
   const onConfirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8000/api/applications/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/applications/${id}`, {
         withCredentials: true,
       });
       setShowDeleteModal(false);
