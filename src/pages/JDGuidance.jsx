@@ -20,7 +20,7 @@ export default function JDGuidance() {
       formData.append("resume", file);
       formData.append("jobDescription", jobDescription);
 
-      const response = await fetch("http://localhost:8000/api/analysis/jd", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/analysis/jd`, {
         method: "POST",
         body: formData,
       });

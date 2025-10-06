@@ -17,7 +17,7 @@ export default function ResumeReview() {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const response = await fetch("http://localhost:8000/api/analysis/jd", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/analysis/jd`, {
         method: "POST",
         body: formData,
       });

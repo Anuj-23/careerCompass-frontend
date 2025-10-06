@@ -23,7 +23,7 @@ const Dashboard = () => {
       if (sortOrder) query.append("sort", sortOrder);
 
       const response = await axios.get(
-        `http://localhost:8000/api/applications?${query.toString()}`,
+        `${process.env.REACT_APP_API_URL}/api/applications?${query.toString()}`,
         {withCredentials: true}
       );
 

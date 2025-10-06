@@ -21,7 +21,7 @@ export default function Profile() {
   const fetchProfile = async () => {
     try {
       setLoadingProfile(true);
-      const response = await axios.get("http://localhost:8000/api/profile", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/profile`, {
         withCredentials: true,
       });
       console.log(response.data.fullName);
@@ -40,7 +40,7 @@ export default function Profile() {
   const handleSaveProfile = async (updatedProfile) => {
     try {
       setSavingProfile(true);
-      await axios.put("http://localhost:8000/api/profile", updatedProfile, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/profile`, updatedProfile, {
         withCredentials: true,
       });
 
@@ -62,7 +62,7 @@ export default function Profile() {
     try {
       setChangingPassword(true);
       await axios.post(
-        "http://localhost:8000/api/change-password",
+        `${process.env.REACT_APP_API_URL}/api/change-password`,
         passwordData,
         {withCredentials: true}
       );
