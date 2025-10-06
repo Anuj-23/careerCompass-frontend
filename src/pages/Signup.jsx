@@ -49,7 +49,7 @@ const Signup = () => {
     try {
       
       const signup = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/signup`,
+        `${process.env.REACT_APP_API_URL}/api/auth/signup`,
         formData,
         {withCredentials: true}
       );

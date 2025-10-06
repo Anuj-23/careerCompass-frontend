@@ -11,7 +11,7 @@ export const AuthProvider = ({children}) => {
   useEffect(() => {
     // Check auth on page load
     axios
-      .get("http://localhost:8000/api/auth/verify") // This route should verify JWT in cookie
+      .get(`${process.env.REACT_APP_API_URL}/api/auth/verify`) // This route should verify JWT in cookie
       .then(() => setAuthenticated(true))
       .catch(() => setAuthenticated(false))
       .finally(() => setLoading(false));
