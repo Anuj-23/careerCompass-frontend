@@ -41,7 +41,7 @@ const AddOrEditApplicationModal = ({
     try {
       const url = selectedApp
         ? `${process.env.REACT_APP_API_URL}/api/applications/${selectedApp._id}`
-        : `${process.env.REACT_APP_API_URL}/api/applications/${selectedApp._id}`;
+        : `${process.env.REACT_APP_API_URL}/api/applications`;
       const method = selectedApp ? "PUT" : "POST";
 
       const res = await fetch(url, {
